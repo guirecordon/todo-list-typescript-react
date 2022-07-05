@@ -1,5 +1,8 @@
 :root {
   --gray-700: #0d0d0d;
+  --gray-500: #262626;
+  --gray-100: #f2f2f2;
+  --blueDark: #1e6f9f;
   --blue: #4ea8de;
   --purpleDark: #5e60ce;
 }
@@ -15,4 +18,40 @@
 body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0px;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+button,
+input {
+  font-size: 1rem;
+  font-family: var(--type-first);
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.wrapper {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+:focus {
+  outline: none;
 }
