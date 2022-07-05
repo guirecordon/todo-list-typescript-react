@@ -14,6 +14,16 @@
   line-height: 1.4;
 }
 
+.content.lineThrough {
+  text-decoration-line: line-through;
+  color: var(--gray-300);
+}
+
+.check {
+  cursor: pointer;
+  position: relative;
+}
+
 .check::before {
   content: '';
   display: inline-block;
@@ -21,4 +31,17 @@
   width: 17.45px;
   border: 2px solid var(--blue);
   border-radius: 50%;
+  transition: 0.2s;
+}
+
+.check.checkedOff::before {
+  content: '';
+  border: 2px solid var(--purpleDark);
+  background: var(--purpleDark);
+}
+
+.icon {
+  position: absolute;
+  left: 3px;
+  top: 2px;
 }
