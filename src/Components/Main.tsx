@@ -5,7 +5,6 @@ export function Main() {
   return(
     <div>
       <Form />
-      <List />
     </div>
   )
 }

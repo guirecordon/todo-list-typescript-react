@@ -35,6 +35,5 @@
 }
 
 .form button:hover {
-  background: var(--blue);
-  color: var(--purpleDark);
+  background: var(--purpleDark);
 }

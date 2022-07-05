@@ -3,15 +3,13 @@ import { useState } from 'react';
 
 import styles from './Task.module.css'
 
-export function Task() {
+export function Task({id, content}) {
   const [check, setCheck] = useState(false);
 
   function handleCheckOff() {
     setCheck(!check);
     console.log(check);
-    
   }
-
 
   return (
     <div className={styles.task}>
@@ -20,7 +18,9 @@ export function Task() {
         className={`${styles.check} ${check && styles.checkedOff}`}>
           {check && <Check className={styles.icon} size={16} weight="bold" />}
       </div>
-      <p className={`${styles.content} ${check && styles.lineThrough}`}>This is my first task</p>
+      <p className={`${styles.content} ${check && styles.lineThrough}`}>
+        {content}
+      </p>
       <Trash size={24} color={'var(--gray-300)'} />
     </div>
   )
