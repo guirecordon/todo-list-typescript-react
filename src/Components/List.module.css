@@ -1,0 +1,65 @@
+.list {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.criadas {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.concluidas {
+  color: var(--purpleDark);
+  font-weight: bold;
+}
+
+.counterContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter {
+  display: block;
+  background: var(--gray-400);
+  color: var(--gray-100);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.emptyBoard {
+  border-top: 1px solid var(--gray-400);
+  padding: 4rem 1.5rem;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emptyBoard p {
+  color: var(--gray-300);
+  line-height: 1.4;
+}
+
+.emptyBoard .topLine {
+  font-weight: 700;
+}
+
+.boardMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
