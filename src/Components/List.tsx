@@ -1,5 +1,6 @@
 import {ClipboardText} from 'phosphor-react'
 import styles from './List.module.css'
+import { Task } from './Task'
 
 export function List() {
   return (
@@ -15,6 +16,8 @@ export function List() {
         </div>
       </header>
       <div>
+        <Task />
+
         <section className={styles.emptyBoard}>
             <div className={styles.boardMessage}>
               <ClipboardText size={56} color="var(--gray-400)" />
