@@ -8,6 +8,7 @@
   --blueDark: #1e6f9f;
   --blue: #4ea8de;
   --purpleDark: #5e60ce;
+  --danger: #e25858;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
@@ -54,6 +55,7 @@ a {
 .wrapper {
   max-width: 46rem;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 :focus {

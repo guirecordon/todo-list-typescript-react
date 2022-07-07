@@ -12,7 +12,11 @@ export function Task({task, onToggle, onDelete}) {
       <p className={`${styles.content} ${task.complete && styles.lineThrough}`}>
         {task.task}
       </p>
-      <Trash onClick={() => onDelete(task.id)} size={24} color={'var(--gray-300)'} />
+      <Trash 
+        className={styles.trashIcon}
+        onClick={() => onDelete(task.id)} 
+        size={24}
+      />
     </div>
   )
 }

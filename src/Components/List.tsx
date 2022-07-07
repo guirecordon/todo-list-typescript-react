@@ -3,25 +3,26 @@ import { useState } from 'react'
 import styles from './List.module.css'
 import { Task } from './Task'
 
-export function List({tasks, onToggle, onDelete}) {
+export function List({tasks, onToggle, onDelete, taskCount, checkedTasks}) {
   return (
     <div className={styles.list}>
       <header className={styles.header}>
         <div className={`${styles.criadas} ${styles.counterContainer}`}>
           Tarefas criadas
-          <span className={styles.counter}>0</span>
+          <span className={styles.counter}>{taskCount}</span>
         </div>
         <div className={`${styles.concluidas} ${styles.counterContainer}`}>
           Concluídas
-          <span className={styles.counter}>0</span>
+          <span className={styles.counter}>{checkedTasks}</span>
         </div>
       </header>
-      {tasks ? (
-        tasks.map(task => {
-          return <Task task={task} onToggle={onToggle} onDelete={onDelete} />
-        })
-      ) : (
-        <div>
+
+      <div>
+        {tasks.length > 0 ? (
+          tasks.map(task => {
+            return <Task task={task} onToggle={onToggle} onDelete={onDelete} />
+          })
+        ) : (
           <section className={styles.emptyBoard}>
             <div className={styles.boardMessage}>
               <ClipboardText size={56} color="var(--gray-400)" />
@@ -37,9 +38,8 @@ export function List({tasks, onToggle, onDelete}) {
               </div>
             </div>
           </section>
-        </div>
       )}
-
+    </div>
     </div>
   )
 }

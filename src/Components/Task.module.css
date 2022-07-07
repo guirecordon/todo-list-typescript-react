@@ -46,3 +46,12 @@
   left: 3px;
   top: 2px;
 }
+
+.trashIcon {
+  color: var(--gray-300);
+}
+
+.trashIcon:hover {
+  color: var(--danger);
+  cursor: pointer;
+}
