@@ -1,27 +1,18 @@
 import { Trash, Check } from 'phosphor-react'
-import { useState } from 'react';
-
 import styles from './Task.module.css'
 
-export function Task({id, content}) {
-  const [check, setCheck] = useState(false);
-
-  function handleCheckOff() {
-    setCheck(!check);
-    console.log(check);
-  }
-
+export function Task({task, onToggle, onDelete}) {  
   return (
     <div className={styles.task}>
-      <div 
-        onClick={handleCheckOff} 
-        className={`${styles.check} ${check && styles.checkedOff}`}>
-          {check && <Check className={styles.icon} size={16} weight="bold" />}
+      <div
+        onClick={() => onToggle(task.id)}
+        className={`${styles.check} ${task.complete && styles.checkedOff}`}>
+          {task.complete && <Check className={styles.icon} size={16} weight="bold" />}
       </div>
-      <p className={`${styles.content} ${check && styles.lineThrough}`}>
-        {content}
+      <p className={`${styles.content} ${task.complete && styles.lineThrough}`}>
+        {task.task}
       </p>
-      <Trash size={24} color={'var(--gray-300)'} />
+      <Trash onClick={() => onDelete(task.id)} size={24} color={'var(--gray-300)'} />
     </div>
   )
 }
