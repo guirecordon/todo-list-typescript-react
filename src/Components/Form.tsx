@@ -1,13 +1,21 @@
 import {PlusCircle} from 'phosphor-react';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import styles from './Form.module.css'
 import { List } from './List';
 
+
+interface Task {
+  id: number;
+  task: string;
+  complete: boolean;
+}
+
 export function Form() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [value, setValue] = useState('');
   const [taskCount, setTaskCount] = useState(0);
   const [checkedTasks, setCheckedTasks] = useState(0);
+
 
   useEffect(() => {
     setTaskCount(tasks.length);
@@ -16,13 +24,13 @@ export function Form() {
     setCheckedTasks(completeList.length);
   }, [tasks])
 
-  function handleSubmit(event) {
+  function handleSubmit(event:FormEvent) {
     event.preventDefault();
     addTask(value);
     setValue('');
   }
 
-  function handleToggle(id) {
+  function handleToggle(id:number) {
     let mappedArray = tasks.map(task => {
       return task.id === id ? {...task, complete: !task.complete} : {...task}
     });
@@ -30,16 +38,16 @@ export function Form() {
     setTasks(mappedArray);
   }
 
-  function addTask(value) {
+  function addTask(value:string) {
     let copy = [...tasks, { id: tasks.length + 1, task: value, complete: false}];    
     setTasks(copy);    
   }
 
-  function handleChange({target}) {
-    setValue(target.value);
+  function handleChange(event:ChangeEvent<HTMLInputElement>) {
+    setValue(event.target.value);
   }
 
-  function handleFilter(id) {
+  function handleFilter(id: number) {
     let filtered = tasks.filter(task => {
       return task.id !== id;
     });

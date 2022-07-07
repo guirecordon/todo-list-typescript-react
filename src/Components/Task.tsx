@@ -1,7 +1,25 @@
 import { Trash, Check } from 'phosphor-react'
 import styles from './Task.module.css'
 
-export function Task({task, onToggle, onDelete}) {  
+interface Task {
+  id: number;
+  task: string;
+  complete: boolean;
+}
+
+interface UpdatedArr {
+  id: number;
+  task: string;
+  complete: boolean;
+}
+
+interface TaskProps {
+  task: Task;
+  onToggle: (id: number) => void;
+  onDelete: (id: number) => void;
+}
+
+export function Task({task, onToggle, onDelete}:TaskProps) {  
   return (
     <div className={styles.task}>
       <div

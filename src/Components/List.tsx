@@ -3,7 +3,21 @@ import { useState } from 'react'
 import styles from './List.module.css'
 import { Task } from './Task'
 
-export function List({tasks, onToggle, onDelete, taskCount, checkedTasks}) {
+  interface Tasks {
+    id: number;
+    task: string;
+    complete: boolean;
+  }
+
+  interface TasksProps {
+    tasks: Tasks[];
+    onToggle: (id: number) => void;
+    onDelete: (id: number) => void;
+    taskCount: number;
+    checkedTasks: number; 
+  }
+
+export function List({tasks, onToggle, onDelete, taskCount, checkedTasks}:TasksProps) {
   return (
     <div className={styles.list}>
       <header className={styles.header}>
