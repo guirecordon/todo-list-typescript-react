@@ -34,8 +34,15 @@ export function List({tasks, onToggle, onDelete, taskCount, checkedTasks}:TasksP
       <div>
         {tasks.length > 0 ? (
           tasks.map(task => {
-            return <Task task={task} onToggle={onToggle} onDelete={onDelete} />
-          })
+            return (
+              <Task
+                key={task.id} 
+                task={task} 
+                onToggle={onToggle} 
+                onDelete={onDelete} 
+              />
+            )
+            })
         ) : (
           <section className={styles.emptyBoard}>
             <div className={styles.boardMessage}>

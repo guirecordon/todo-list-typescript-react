@@ -7,12 +7,6 @@ interface Task {
   complete: boolean;
 }
 
-interface UpdatedArr {
-  id: number;
-  task: string;
-  complete: boolean;
-}
-
 interface TaskProps {
   task: Task;
   onToggle: (id: number) => void;
