@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
 :root {
   --gray-700: #0d0d0d;
   --gray-600: #1a1a1a;
@@ -10,8 +12,6 @@
   --purpleDark: #5e60ce;
   --danger: #e25858;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
 
 * {
   padding: 0px;
